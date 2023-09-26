@@ -1,3 +1,9 @@
+# Nature Photos Web
+
+This is a public web client for my [Nature Photos App](https://github.com/zorrokid/nature-photos).
+
+This is build using React, TypeScript, Redux Toolkit and Firebase.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
