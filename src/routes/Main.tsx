@@ -1,5 +1,5 @@
-import Thumbnail from "./components/thumbnail";
-import { useAppSelector } from "./redux/hooks";
+import Thumbnail from "../components/thumbnail";
+import { useAppSelector } from "../redux/hooks";
 
 function App() {
   const photos = useAppSelector((state) => state.photos.photos);

@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App';
+import App from './routes/Main';
 //import reportWebVitals from './reportWebVitals';
 
 // Import the functions you need from the SDKs you need
@@ -10,6 +10,11 @@ import { firebaseConfig } from './firebase/config';
 import { store } from './redux/store';
 import { Provider } from 'react-redux';
 import { fetchPhotos} from './redux/photosSlice';
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import ViewPhoto from './routes/ViewPhoto';
 
 
 // Initialize Firebase
@@ -23,10 +28,21 @@ const root = ReactDOM.createRoot(
 
 store.dispatch(fetchPhotos());
 
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+  },
+  {
+    path: '/photos/:id',
+    element: <ViewPhoto />,
+  }
+]);
+
 root.render(
   <React.StrictMode>
-  <Provider store={store}>
-	  <App /> 
+    <Provider store={store}>
+      <RouterProvider router={router}/> 
     </Provider>
   </React.StrictMode>
 );

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { PhotoInfo } from "../models/photoInfo";
 
 interface ThumbnailProps {
@@ -9,7 +10,12 @@ function Thumbnail({photoInfo}: ThumbnailProps) {
     console.log(photoInfo)
     return (
         <div>
-            <img src={photoInfo.thumbnailUrl} alt="thumbnail" />
+            <Link to={`/photos/${photoInfo.id}`}>
+                <img 
+                    src={photoInfo.thumbnailUrl} 
+                    alt="thumbnail" 
+                />
+            </Link>
         </div>
     );
 }
