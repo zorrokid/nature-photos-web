@@ -1,3 +1,4 @@
+import Thumbnail from "./components/thumbnail";
 import { useAppSelector } from "./redux/hooks";
 
 function App() {
@@ -10,9 +11,7 @@ function App() {
       <div>
           {
             photos.map((photo) => 
-                <div key={photo.id}>
-                  {photo.id}
-                </div>
+               <Thumbnail photoInfo={photo} key={photo.id} /> 
               )
           }
       </div>

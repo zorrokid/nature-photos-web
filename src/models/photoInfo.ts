@@ -8,6 +8,8 @@ export type PhotoInfo = {
   isSafe: boolean;
   thumbnail: boolean;
   resized: boolean;
+  thumbnailUrl: string;
+  fullSizeUrl: string;
 }
 
 export type ExifData = {
