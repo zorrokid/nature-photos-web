@@ -50,3 +50,8 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+# Hosting
+✔  Created service account github-action-604350308 with Firebase Hosting admin permissions.
+✔  Uploaded service account JSON to GitHub as secret FIREBASE_SERVICE_ACCOUNT_FLUTTER_NATURE_PHOTOS.
+i  You can manage your secrets at https://github.com/zorrokid/film-freak-web-ui/settings/secrets.
