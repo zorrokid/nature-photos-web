@@ -1,9 +1,9 @@
 import { createSlice , createAsyncThunk } from '@reduxjs/toolkit';
-import { PhotoInfo } from '../models/photoInfo';
+import { PhotoInfoModel, buildPhotoInfoModel } from '../models/photoInfo';
 import { fetchPhotoInfo } from '../services/firestoreService';
 
 export interface PhotosState {
-	photos: PhotoInfo[];
+	photos: PhotoInfoModel[];
 }
 
 const initialState: PhotosState = {
@@ -13,7 +13,7 @@ const initialState: PhotosState = {
 export const fetchPhotos = createAsyncThunk('photos/fetchPhotos', 
 	async () => {
 		const response = await fetchPhotoInfo();
-		return response;
+		return response.map((photoInfo) => buildPhotoInfoModel(photoInfo));
 	}
 );
 

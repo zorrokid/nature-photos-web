@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useAppSelector } from "../redux/hooks";
+import { Chip } from "@mui/material";
 
 interface ViewPhotoProps {
 }
@@ -10,11 +11,23 @@ function ViewPhoto(props: ViewPhotoProps) {
 
     return (
             photo ?  
-            <>
-                <h1>View Photo {id}</h1>
-                <img src={photo.fullSizeUrl} alt={photo.labels.join(", ")} />
-            </> : <h1>Photo not found</h1>
-            
+            <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+                <div style={{ display: "flex", flexDirection: "row", gap: "10px" }}>
+                {
+                    photo.labels.map((label) => <Chip label={label} />)
+                }
+                </div>
+                <img 
+                    src={photo.fullSizeUrl} 
+                    alt={photo.labels.join(", ")} 
+                    style={{ maxWidth: "1200px" }}
+                />
+                {
+                    photo.hasLocation() && 
+                    <div>Location: {photo.exifData?.longitude} {photo.exifData?.latitude}</div>
+                }
+            </div> 
+            : <h1>Photo not found</h1>
     );
 
 }
